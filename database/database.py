@@ -10,7 +10,7 @@ user_data = database['users']
 def new_user(id):
     return {
         '_id': id,
-        # Remove the verify_status part
+         Removed the verify_status part
     }
 
 async def present_user(user_id: int):
@@ -22,15 +22,15 @@ async def add_user(user_id: int):
     await user_data.insert_one(user)
     return
 
-# Remove verification status-related code
-# async def db_verify_status(user_id):
-#     user = await user_data.find_one({'_id': user_id})
-#     if user:
-#         return user.get('verify_status', default_verify)
-#     return default_verify
+# Removed verification status-related code
+ async def db_verify_status(user_id):
+     user = await user_data.find_one({'_id': user_id})
+     if user:
+         return user.get('verify_status', default_verify)
+     return default_verify
 
-# async def db_update_verify_status(user_id, verify):
-#     await user_data.update_one({'_id': user_id}, {'$set': {'verify_status': verify}})
+ async def db_update_verify_status(user_id, verify):
+     await user_data.update_one({'_id': user_id}, {'$set': {'verify_status': verify}})
 
 async def full_userbase():
     user_docs = user_data.find()
