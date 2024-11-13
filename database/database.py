@@ -10,7 +10,7 @@ user_data = database['users']
 def new_user(id):
     return {
         '_id': id,
-         Removed the verify_status part
+         #Removed the verify_status part
     }
 
 async def present_user(user_id: int):
