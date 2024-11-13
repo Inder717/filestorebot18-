@@ -23,14 +23,14 @@ async def add_user(user_id: int):
     return
 
 # Removed verification status-related code
- async def db_verify_status(user_id):
-     user = await user_data.find_one({'_id': user_id})
-     if user:
-         return user.get('verify_status', default_verify)
-     return default_verify
+async def db_verify_status(user_id):
+    user = await user_data.find_one({'_id': user_id})
+    if user:
+        return user.get('verify_status', default_verify)
+    return default_verify
 
- async def db_update_verify_status(user_id, verify):
-     await user_data.update_one({'_id': user_id}, {'$set': {'verify_status': verify}})
+async def db_update_verify_status(user_id, verify):
+    await user_data.update_one({'_id': user_id}, {'$set': {'verify_status': verify}})
 
 async def full_userbase():
     user_docs = user_data.find()
