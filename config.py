@@ -41,6 +41,8 @@ TUT_VID = os.environ.get("https://t.me/tokenbotuse/6")
 #force sub channel id, if you want enable force sub
 FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1002424794894"))
 FORCE_SUB_CHANNEL2 = int(os.environ.get("FORCE_SUB_CHANNEL", "-1002313390636"))
+FORCE_MSG = "Please join our channels to use this bot:\n\n1. [Channel 1](https://t.me/{FORCE_SUB_CHANNEL})\n2. [Channel 2](https://t.me/{FORCE_SUB_CHANNEL2})"
+START_MSG = "Hello {first},\nWelcome to the bot! Feel free to explore."
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
